@@ -11,12 +11,14 @@
     <script>
       //정의문과 실행문을 동시에 작성할 경우 </head>에 스크립트 작성
       /*
-    wrapper선언
-    1.jQuery('선택자').html('구문형식');
-    2.(function($){실행할 문장;})(jQuery)
-    3.$(function(){실행할문장;})=>간략형
-    */
+      wrapper선언
+      1.jQuery('선택자').html('구문형식');
+      2.(function($){실행할 문장;})(jQuery)
+      3.$(function(){실행할문장;})=>간략형
+      */
       $(function () {
+        // 전역변수선언
+        var $bannNum = 0; // 변수 선언 초기 값 지정
         //주메뉴에 마우스를 오버했을때 보이게(.hide() .show())
         $("#lnb>ul>li>a").bind("mouseover focus", function () {
           $("#lnb>ul>li>ul").hide(); //초기값
@@ -55,6 +57,20 @@
           $("#allMenu_box").slideUp(50, function () {
             $(".allMenu_view").slideDown(50);
           });
+        });
+        // next btn을 클릭했을때
+        $(".next").click(function () {
+          if ($bannNum >= 1) return fasle;
+          $bannNum++;
+          var $book_w = $("#recomn-book").width();
+          $("#book_frame").animate({ left: -$book_w * $bannNum }, 400);
+        });
+        // prev btn을 클릭했을때
+        $(".prev").click(function () {
+          if ($bannNum <= 0) return fasle;
+          $bannNum--;
+          var $book_w = $("#recomn-book").width();
+          $("#book_frame").animate({ left: -$book_w * $bannNum }, 400);
         });
       });
     </script>
@@ -156,6 +172,90 @@
         <a href="#" class="all_close">전체메뉴닫기</a>
       </nav>
     </header>
+    <section id="recomn-book">
+      <!-- 1003px 가운데 정렬 -->
+      <div id="book_frame" title="신간추천">
+        <!-- 1003*2(200%) -->
+        <div id="book_content1" class="bookcon">
+          <h2>
+            <img src="./images/newbook1_tit.gif" alt="안드로이드로 용돈벌기" />
+          </h2>
+          <ul>
+            <li class="pic">
+              <img
+                src="./images/new_book1.jpg"
+                alt="초보가 고수되기1 안드로이드로 용돈벌기"
+              />
+            </li>
+            <li class="smr">
+              <img
+                src="./images/newbook2_exp.gif"
+                alt="구글 안드로이드 마켓에 등록된 4가지 상용앱 '핑거러너 / 기웃 / 동물원 / 랭킹' 등의 풀 소스를 활용하여 설명하고, 여러 Tip과 Note를 함께 제공합니다."
+              />
+            </li>
+            <li class="detail">
+              <a href="#">
+                <img src="./images/detile_view.gif" alt="자세히 알아보기" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="book_content2" class="bookcon">
+          <h2>
+            <img src="./images/newbook2_tit.gif" alt="아이폰으로 용돈벌기" />
+          </h2>
+          <ul>
+            <li class="pic">
+              <img
+                src="./images/new_book2.jpg"
+                alt="초보가 고수되기2 아이폰으로 용돈벌기"
+              />
+            </li>
+            <li class="smr">
+              <img
+                src="./images/newbook2_exp.gif"
+                alt="앱스토어에 등록된 4가지 상용앱 'Dailypen/Back&Wall/Weatherboy/기웃 등의 풀 소스를 활용하여 설명하고, 여러 Tip과 Note를 함께 제공합니다."
+              />
+            </li>
+            <li class="detail">
+              <a href="#">
+                <img src="./images/detile_view.gif" alt="자세히 알아보기" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="arrow">
+        <a href="#" class="prev">
+          <img src="./images/btn_prev.gif" alt="이전" />
+        </a>
+        <a href="#" class="next">
+          <img src="./images/btn_next.gif" alt="다음" />
+        </a>
+      </div>
+      <div id="book_roll">
+        <ul>
+          <li>
+            <a href="#">
+              <img
+                src="./images/state_over.png"
+                alt="안드로이드로 용돈벌기 활성화 상태"
+                class="firstactive"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./images/state_out.png"
+                alt="아이폰으로 용돈벌기 비활성화 상태"
+                class="firstactive"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
     <!--<script>
   body안에 작성할때는 실행문만 작성할 경우  
 </script>-->

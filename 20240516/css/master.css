@@ -194,7 +194,99 @@ img {
     background: #369;
     color: #fff;
   }
+
   .all_close:hover {
     color: #ccc;
+  }
+
+  #recomn-book {
+    width: 1003px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #book_frame {
+    width: 200%;
+    position: relative;
+    left: 0;
+  }
+
+  #book_frame:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .bookcon {
+    float: left;
+    width: 50%;
+    padding-top: 30px;
+  }
+
+  .bookcon:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .bookcon > h2 {
+    text-align: right;
+    padding: 0 50px 0 0;
+  }
+
+  .bookcon > ul {
+    width: 100%;
+  }
+
+  .bookcon > ul:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .bookcon > ul > li.pic {
+    position: relative;
+    float: left;
+    top: -50px;
+    width: 273px;
+    padding-left: 50px;
+  }
+
+  .bookcon > ul > li.smr {
+    float: right;
+    width: 489px;
+    padding: 50px 50px 0 0;
+  }
+
+  .bookcon > ul > li.detail {
+    float: right;
+    width: 439px;
+    padding: 50px 65px 0;
+  }
+
+  #arrow > a {
+    position: absolute;
+    top: 140px;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  #book_roll {
+    position: absolute;
+    left: 49%;
+    bottom: 10px;
+  }
+
+  #book_roll > ul > li {
+    float: left;
+    margin-right: 3px;
   }
 }
