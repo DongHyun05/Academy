@@ -1,265 +1,411 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>아이콕스 반응형 웹페이지 제작</title>
-    <link rel="stylesheet" href="css/master.css" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이쿡스 반응형 웹페이지 제작</title>
+    <link rel="stylesheet" href="css/master.css">
     <script src="js/jquery.js"></script>
     <!--<script src="js/modernizr.custom.js"></script>-->
     <!--<script src="js/jquery.mobile.custom.min.js"></script>-->
     <script>
-      //정의문과 실행문을 동시에 작성할 경우 </head>에 스크립트 작성
-      /*
-        wrapper선언
-        1.jQuery('선택자').html('구문형식');
-        2.(function($){실행할 문장;})(jQuery)
-        3.$(function(){실행할문장;})=>간략형
-      */
-      $(function () {
-        // 전역변수선언
-        var $bannNum = 0; // 변수 선언 초기 값 지정
-        //주메뉴에 마우스를 오버했을때 보이게(.hide() .show())
-        $("#lnb>ul>li>a").bind("mouseover focus", function () {
-          $("#lnb>ul>li>ul").hide(); //초기값
-          $("#lnb>ul>li>a").css({
-            height: "29px",
-            background: "none",
-          });
+    //정의문과 실행문을 동시에 작성할 경우 </head>에 스크립트 작성
+    /*
+    wrapper선언
+    1.jQuery('선택자').html('구문형식');
+    2.(function($){실행할 문장;})(jQuery)
+    3.$(function(){실행할문장;})=>간략형
+    */
+   $(function(){
 
-          $(this).next().show();
-          $(this).css({
-            height: "32px",
-            background: "url(images/over_icon.gif)no-repeat 50% 100%",
-          });
+        //전역변수선언
+        var $bannNum=0; //변수 선언 초기값지정
+
+        //주메뉴에 마우스를 오버했을때 보이게(.hide() .show())
+        $('#lnb>ul>li>a').bind('mouseover focus',function(){
+            $('#lnb>ul>li>ul').hide();//초기값
+            $('#lnb>ul>li>a').css({
+                'height':'29px',
+                'background':'none'
+            });
+
+            $(this).next().show();
+            $(this).css({
+                'height':'32px',
+                'background':'url(images/over_icon.gif)no-repeat 50% 100%'
+            });
         });
         //.bind(events,function());
         //.on(events,selector,data,function());
 
         //주메뉴에 마우스 아웃했을때 안보이게...
-        $("#lnb").mouseleave(function () {
-          $("#lnb>ul>li>ul").stop().slideUp(50);
-          //.slideUp( [duration ] [, easing ] [, complete ] )
-          $("#lnb>ul>li>a").css({
-            height: "29px",
-            background: "none",
-          });
+        $('#lnb').mouseleave(function(){
+            $('#lnb>ul>li>ul').stop().slideUp(50);
+            //.slideUp( [duration ] [, easing ] [, complete ] )
+            $('#lnb>ul>li>a').css({
+                'height':'29px',
+                'background':'none'
+            });
         });
 
         //allMenu_view click했을때 slideDown
-        $(".allMenu_view>a").click(function () {
-          $(".allMenu_view").slideUp(50, function () {
-            $("#allMenu_box").slideDown("slow");
-          });
+        $('.allMenu_view>a').click(function(){
+            $('.allMenu_view').slideUp(50,function(){
+                $('#allMenu_box').slideDown('slow');
+            });          
         });
+        
         //all_close click했을때 slideUp
-        $(".all_close").click(function () {
-          $("#allMenu_box").slideUp(50, function () {
-            $(".allMenu_view").slideDown(50);
-          });
+        $('.all_close').click(function(){
+            $('#allMenu_box').slideUp(50,function(){
+                $('.allMenu_view').slideDown(50);
+            });
         });
-        // next btn을 클릭했을때
-        $(".next").click(function () {
-          if ($bannNum >= 1) return fasle;
-          $bannNum++;
-          var $book_w = $("#recomn-book").width();
-          $("#book_frame").animate({ left: -$book_w * $bannNum }, 400);
+
+        //next btn를 클릭했을때 1003px이동
+        $('.next').click(function(){
+            if($bannNum >= 1)return false;
+            $bannNum++;
+            var $book_w=$('#recomn-book').width();
+            $('#book_frame').animate({'left':-$book_w*$bannNum},400,function(){
+                $('#book_roll img').attr('src', 'images/state_out.png');//초기값
+                $('#book_roll img').eq($bannNum).attr('src','images/state_over.png');  
+                //console.log($bannNum);
+            });
+           
         });
-        // prev btn을 클릭했을때
-        $(".prev").click(function () {
-          if ($bannNum <= 0) return fasle;
-          $bannNum--;
-          var $book_w = $("#recomn-book").width();
-          $("#book_frame").animate({ left: -$book_w * $bannNum }, 400);
+        //prev btn를 클릭했을때
+        $('.prev').click(function(){
+            if($bannNum <= 0)return false;
+            $bannNum--;
+            var $book_w=$('#recomn-book').width();
+            $('#book_frame').animate({'left':-$book_w*$bannNum},400,function(){
+                $('#book_roll img').attr('src','images/state_out.png');
+                $('#book_roll img').eq($bannNum).attr('src','images/state_over.png');
+                console.log($bannNum);
+            });
         });
-      });
+
+        /*tab menu*/
+        
+        $('.t1>a, .t2>a').bind('click focus',function(e){
+            e.preventDefault();//새 창 띄우기를 기본값으로 지정하는 메서드
+            $('.item1, .item2').hide();//초기값
+            $(this).parent().next().show();
+            $('.tit>a>img').each(function(){
+                $(this).attr('src',$(this).attr('src').replace('_over.gif','.gif'));
+            });
+            $btnImg=$(this).children('img');
+            $btnImg.attr('src',$btnImg.attr('src').replace('.gif','_over.gif'));
+        });
+
+
+   });//wrapper end
     </script>
-  </head>
-  <body>
-    <header id="firstHeader">
-      <h1 title="Education by sympathy">
+</head>
+<body>
+<header id="firstHeader">
+    <h1 title="Education by sympathy">
         <a href="#">
-          <img src="images/logo.gif" alt="아이콕스" />
+            <img src="images/logo.gif" alt="아이콕스">
         </a>
-      </h1>
-      <form method="post" id="sform" name="sform">
+    </h1>
+    <form method="post" id="sform" name="sform">
         <fieldset>
-          <legend class="skip">도서검색</legend>
-          <label class="skip" for="sbox">도서 검색어 입력</label>
-          <input
-            type="search"
-            id="sbox"
-            class="tbox"
-            placeholder="도서 검색어 입력"
-          />
-          <input type="image" src="images/search.gif" alt="검색" class="sbtn" />
+            <legend class="skip">도서검색</legend>
+            <label class="skip" for="sbox">도서 검색어 입력</label>
+            <input type="search" id="sbox" class="tbox" placeholder="도서 검색어 입력">
+            <input type="image" src="images/search.gif" alt="검색" class="sbtn">
         </fieldset>
-      </form>
-      <ul class="gnb">
+    </form>
+    <ul class="gnb">
         <li><a href="#">Home</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">News</a></li>
         <li><a href="#">Contact</a></li>
-      </ul>
-      <nav id="lnb">
+    </ul>
+    <nav id="lnb">
         <ul>
-          <li class="m m1">
-            <a href="#" class="mm">아이콕스</a>
-            <ul>
-              <li><a href="#">회사소개</a></li>
-              <li class="last"><a href="#">비전</a></li>
-            </ul>
-          </li>
-          <li class="m m2">
-            <a href="#" class="mm">도서소개</a>
-            <ul>
-              <li><a href="#">신간도서</a></li>
-              <li class="last"><a href="#">도서목록</a></li>
-            </ul>
-          </li>
-          <li class="m m3">
-            <a href="#" class="mm">iCox커뮤니티</a>
-            <ul>
-              <li><a href="#">와글와글IT</a></li>
-              <li><a href="#">C 스쿨</a></li>
-              <li class="last"><a href="#">Java 스쿨</a></li>
-            </ul>
-          </li>
-          <li class="m m4">
-            <a href="#" class="mm">iCox자료실</a>
-            <ul>
-              <li><a href="#">도서자료실</a></li>
-              <li><a href="#">기타자료실</a></li>
-            </ul>
-          </li>
+            <li class="m m1"><a href="#" class="mm">아이콕스</a>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li class="last"><a href="#">비전</a></li>
+                </ul>
+            </li>
+            <li class="m m2"><a href="#" class="mm">도서소개</a>
+                <ul>
+                    <li><a href="#">신간도서</a></li>
+                    <li class="last"><a href="#">도서목록</a></li>
+                </ul>
+            </li>
+            <li class="m m3"><a href="#" class="mm">iCox커뮤니티</a>
+                <ul>
+                    <li><a href="#">와글와글IT</a></li>
+                    <li><a href="#">C 스쿨</a></li>
+                    <li class="last"><a href="#">Java 스쿨</a></li>
+
+                </ul>
+            </li>
+            <li class="m m4"><a href="#" class="mm">iCox자료실</a>
+                <ul>
+                    <li><a href="#">도서자료실</a></li>
+                    <li ><a href="#">기타자료실</a></li>
+                </ul>
+            </li> 
         </ul>
         <div class="allMenu_view"><a href="#">전체메뉴</a></div>
-      </nav>
-      <!--주메뉴 끝-->
+    </nav>
+    <!--주메뉴 끝-->
 
-      <nav id="allMenu_box">
+    <nav id="allMenu_box">
         <ul>
-          <li>
-            <a href="#">아이콕스</a>
-            <ul>
-              <li><a href="#">회사소개</a></li>
-              <li><a href="#">비전</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">도서소개</a>
-            <ul>
-              <li><a href="#">신간도서</a></li>
-              <li><a href="#">도서목록</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">iCox커뮤니티</a>
-            <ul>
-              <li><a href="#">와글와글IT</a></li>
-              <li><a href="#">C 스쿨</a></li>
-              <li><a href="#">Java 스쿨</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">iCox자료실</a>
-            <ul>
-              <li><a href="#">도서자료실</a></li>
-              <li><a href="#">기타자료실</a></li>
-            </ul>
-          </li>
+            <li><a href="#">아이콕스</a>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">비전</a></li>
+                </ul>
+            </li>
+            <li><a href="#">도서소개</a>
+                <ul>
+                    <li><a href="#">신간도서</a></li>
+                    <li><a href="#">도서목록</a></li>
+                </ul>
+            </li>
+            <li><a href="#">iCox커뮤니티</a>
+                <ul>
+                    <li><a href="#">와글와글IT</a></li>
+                    <li><a href="#">C 스쿨</a></li>
+                    <li><a href="#">Java 스쿨</a></li>
+                </ul>
+            </li>
+            <li><a href="#">iCox자료실</a>
+                <ul>
+                    <li><a href="#">도서자료실</a></li>
+                    <li><a href="#">기타자료실</a></li>
+                </ul>
+            </li> 
         </ul>
         <a href="#" class="all_close">전체메뉴닫기</a>
-      </nav>
-    </header>
-    <section id="recomn-book">
-      <!-- 1003px 가운데 정렬 -->
-      <div id="book_frame" title="신간추천">
-        <!-- 1003*2(200%) -->
-        <div id="book_content1" class="bookcon">
-          <h2>
-            <img src="./images/newbook1_tit.gif" alt="안드로이드로 용돈벌기" />
-          </h2>
-          <ul>
-            <li class="pic">
-              <img
-                src="./images/new_book1.jpg"
-                alt="초보가 고수되기1 안드로이드로 용돈벌기"
-              />
-            </li>
-            <li class="smr">
-              <img
-                src="./images/newbook2_exp.gif"
-                alt="구글 안드로이드 마켓에 등록된 4가지 상용앱 '핑거러너 / 기웃 / 동물원 / 랭킹' 등의 풀 소스를 활용하여 설명하고, 여러 Tip과 Note를 함께 제공합니다."
-              />
-            </li>
-            <li class="detail">
-              <a href="#">
-                <img src="./images/detile_view.gif" alt="자세히 알아보기" />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="book_content2" class="bookcon">
-          <h2>
-            <img src="./images/newbook2_tit.gif" alt="아이폰으로 용돈벌기" />
-          </h2>
-          <ul>
-            <li class="pic">
-              <img
-                src="./images/new_book2.jpg"
-                alt="초보가 고수되기2 아이폰으로 용돈벌기"
-              />
-            </li>
-            <li class="smr">
-              <img
-                src="./images/newbook2_exp.gif"
-                alt="앱스토어에 등록된 4가지 상용앱 'Dailypen/Back&Wall/Weatherboy/기웃 등의 풀 소스를 활용하여 설명하고, 여러 Tip과 Note를 함께 제공합니다."
-              />
-            </li>
-            <li class="detail">
-              <a href="#">
-                <img src="./images/detile_view.gif" alt="자세히 알아보기" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="arrow">
-        <a href="#" class="prev">
-          <img src="./images/btn_prev.gif" alt="이전" />
-        </a>
-        <a href="#" class="next">
-          <img src="./images/btn_next.gif" alt="다음" />
-        </a>
-      </div>
-      <div id="book_roll">
-        <ul>
-          <li>
-            <a href="#">
-              <img
-                src="./images/state_over.png"
-                alt="안드로이드로 용돈벌기 활성화 상태"
-                class="firstactive"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img
-                src="./images/state_out.png"
-                alt="아이폰으로 용돈벌기 비활성화 상태"
-                class="firstactive"
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!--<script>
+    </nav>
+</header>  
+<!--<script>
   body안에 작성할때는 실행문만 작성할 경우  
-</script>-->
-  </body>
+</script>--> 
+
+<section id="recomn-book"><!--1003픽셀 가운데 정렬-->
+    <div id="book_frame" title="신간추천"><!--1003*2(200%)-->
+        <div id="book_content1" class="bookcon">
+            <h2>
+                <img src="images/newbook1_tit.gif" alt="안드로이드로 용돈벌기">
+            </h2>
+            <ul>
+                <li class="pic">
+                    <img src="images/new_book1.jpg" alt="초보가 고수되기1 안드로이드로 용돈벌기">
+                </li>
+                <li class="smr">
+                    <img src="images/newbook1_exp.gif" alt="구글 안드로이드 마켓에 등록된 4가지 상용앱 '핑거러너 / 기웃 / 동물원 / 랭킹' 등의 풀 소스를 활용하여 설명하고, 여러 Tip과 Note를 함께 제공합니다.">
+                </li>
+                <li class="detail">
+                    <a href="#">
+                        <img src="images/detile_view.gif" alt="자세히알아보기">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--book_content1 end-->
+
+        <div id="book_content2" class="bookcon">
+            <h2>
+                <img src="images/newbook2_tit.gif" alt="아이폰으로 용돈벌기">
+            </h2>
+            <ul>
+                <li class="pic">
+                    <img src="images/new_book2.jpg" alt="초보가 고수되기2 아이폰으로 용돈벌기">
+                </li>
+                <li class="smr">
+                    <img src="images/newbook2_exp.gif" alt="앱스토어에 등록된 4가지 상용앱 'Dailypen/Back&Wall/Weatherboy/기웃 등의 풀 소스를 활용하여 설명하고, 여러 Tip과 Note를 함께 제공합니다.">
+                </li>
+                <li class="detail">
+                    <a href="#">
+                        <img src="images/detile_view.gif" alt="자세히알아보기">
+                    </a>
+                </li>
+            </ul>
+        </div> 
+        <!--book_content2 end-->   
+    </div>
+    <!--book_frame end-->
+
+    <div id="arrow">
+        <a href="#" class="prev"><img src="images/btn_prev.gif" alt="이전"></a>
+        <a href="#" class="next"><img src="images/btn_next.gif" alt="다음"></a>
+    </div>
+    <!--arrow end-->
+
+    <div id="book_roll">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="images/state_over.png" class="firstactive" alt="안드로이드로 용돈벌기 활성화 상태">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/state_out.png" class="firstactive" alt="아이폰으로 용돈벌기 비활성화 상태">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--book_roll end-->
+</section>
+<!--main-banner end-->
+
+<section id="content">
+    <div id="login-banner">
+        <div id="login-area">
+            <h2><img src="images/userlogin.gif" alt="user login"></h2>
+            <form method="post" class="iform">
+                <fieldset>
+                    <legend class="skip">로그인</legend>
+                        <p class="formsection">
+                            <label for="u_id" class="skip">아이디</label>
+                            <input type="text" id="u_id" class="tbox" placeholder="아이디입력">
+                        </p>
+                        <p class="formsection">
+                            <label for="u_pw" class="skip">비밀번호</label>
+                            <input type="password" id="u_pw" class="tbox" placeholder="패스워드입력">
+                        </p>
+                        <p class="formsection loginbtn">
+                            <input type="image" src="images/btn_login.gif" alt="로그인">
+                            <!--<input type="submit" value="로그인">-->
+                            <!--<a href="#">로그인</a>-->
+                        </p>
+                        <ul>
+                            <li class="find"><a href="#">아이디 / 비밀번호 찾기</a></li>
+                            <li class="join"><a href="#">회원가입</a></li>
+                        </ul>
+                </fieldset>
+            </form>
+        </div>
+        <!--login-area end-->
+
+        <ul id="banner-area">
+            <li><a href="#"><img src="images/banner1.gif" alt="독자문의"></a></li>
+            <li><a href="#"><img src="images/banner2.gif" alt="자격증 시험일정"></a></li>
+            <li><a href="#"><img src="images/banner3.gif" alt="도서목록 다운로드"></a></li>
+            <li><a href="#"><img src="images/banner4.gif" alt="저자모집"></a></li>
+        </ul>
+    </div>
+    <!--login-banner end-->
+
+    <div id="newBooks-news">
+        <section>
+            <h2 class="tit t1">
+                <a href="#" onclick="">
+                    <img src="images/tit_newbook_over.gif" alt="새로나온 책">
+                </a>
+            </h2>
+            <div class="items item1">
+                <a href="#" class="rss">
+                    <article id="newbook_list1" class="booklist">
+                        <header>
+                                <h3><img src="images/newbook1.gif"></h3>
+                        </header>
+                        <p class="subtit">
+                            <strong>
+                                안드로이드로 용돈벌기PHP/JSP/ASP와 같은 스크립트 언어...
+                            </strong>
+                        </p>
+                        <p class="smr">
+                            가히 아이폰, 안드로이드 앱이 “문화를 바꾸었다”고 할 수 있을 정도로, 이제 휴대폰과 앱은 따로 분리해서 생각하기 어려워졌으며 스마트폰의 유저는 본인이 원하는...
+                        </p>
+                        <footer>
+                            <span>작성자 :</span> 
+                            <span>한혜진님</span> 
+                            <span><img src="images/star.gif"></span> 
+                            <strong>별점 5점</strong>
+                        </footer>
+                    </article>
+                </a>
+
+                <a href="#" class="rss">
+                    <article id="newbook_list2" class="booklist">
+                        <header>
+                            <h3><img src="images/newbook2.gif"></h3>
+                        </header>
+                        <p class="subtit">
+                            <strong>
+                                아이폰으로 용돈벌기iOS의 다양한 오픈소스를 활용하는 방...
+                            </strong>
+                        </p>
+                        <p class="smr">
+                            iOS 개발이 개발자들 사이에서 인기를 얻기 시작하면서 시중에 많은 책들이 등장했지만, 막상 실제 앱을 개발하려고 하면 어려운 점이 많습니다. 일례로 개발지식만 다...
+                        </p>
+                        <footer>
+                            <span>작성자 :</span> 
+                            <span>김승민님</span> 
+                            <span><img src="images/star.gif"></span> 
+                            <strong>별점 5점</strong>
+                        </footer>
+                    </article>
+                </a>
+            </div>
+
+            <h2 class="tit t2">
+                <a href="#" onclick="">
+                    <img src="images/tit_news.gif" alt="새로나온 소식">
+                </a>
+            </h2>
+            <div class="items item2">
+                <div id="new_list">
+                    <ul>
+                        <li>
+                            <a href="#">성공적인 프로젝트을 위해 기획...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                        <li>
+                            <a href="#">좋은 책의 의미와 선택에 대한 ...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                        <li>
+                            <a href="#">고수가 되어라! 그러면 변화는 ...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                        <li>
+                            <a href="#">'초보자 고수되기' 시리즈 출간...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                        <li>
+                            <a href="#"> 여행과 지식을 함께 하는 삶의 ...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                        <li>
+                            <a href="#">열심히 일한 당신을 위한 휴식 ...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                        <li>
+                            <a href="#">집에서 직장을 겸하는 재택근무...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                        <li>
+                            <a href="#">새로운 기획에 확실한 기회가 ...</a>
+                            <span>2024-05-20</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--newBooks-news end-->
+
+    <div id="down-author">
+        jklk
+    </div>
+    <!--down-author end-->
+</section>
+<!--content end-->
+
+</body>
 </html>
 <!--
     제이쿼리 사용하는 순서
@@ -276,4 +422,16 @@
     3.실행문안에 제이쿼리 기본 문법 작성
       $('제어대상').메서드('값');
       누구누구를 선택해서 무엇을 할것이냐?
+
+    .attr()은 요소(element)의 속성(attribute)의 값을 가져오거나 속성을 추가한다.
+    메서드 문법
+    .attr( attributeName, value )
+    .replace()은 문자열데이터를 치환할때 사용합니다.
+    .replace(searchValue, newValue)
+    // jQuery 유틸리티 메서드
+    $.each(object, function(index, item){});
+    객체를 반복하여 일치하는 각 요소에 대해 함수를 실행합니다.
+    // jQuery 일반 메서드
+    $(selector).each(function(index, item){})
+
 -->

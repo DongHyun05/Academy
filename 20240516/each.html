@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+    $(function(){
+        $('.list li').each(function (index, item) {
+            // 인덱스는 말 그대로 인덱스
+            // item 은 해당 선택자인 객체를 나타냅니다.
+            $(item).addClass('li_0' + index);
+        });
+    });
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ior sit amet.</li>
+        <li>Lorem ipsum </li>
+    </ul>
+   
+</body>
+</html>
