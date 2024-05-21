@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  border: 1px solid #99ccff;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+.form-section {
+  border-bottom: 1px solid #00ccff;
+  padding: 10px 0;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+
+label:first-child {
+  width: 120px;
+  background: #ff00cc;
+  display: inline-block;
+  text-indent: 16px;
+  margin-right: 5px;
+  padding: 5px 0;
+}
+
+.ib {
+  height: 66px;
+  line-height: 66px;
+  vertical-align: top;
+}
+
+#u-id,
+#u-name,
+#u-pw {
+  width: 170px;
+  padding: 5px 0;
+  font-size: 13px;
+  text-indent: 13px;
+}
+
+::placeholder {
+  font-size: 13px;
+}
+
+select {
+  font-size: 16px;
+  padding: 3px 5px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding: 5px;
+}

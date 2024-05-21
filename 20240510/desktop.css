@@ -1,0 +1,12 @@
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    background: green;
+  }
+  h2 {
+    font-size: 50px;
+    color: #000;
+  }
+}

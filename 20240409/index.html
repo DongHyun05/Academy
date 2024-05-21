@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/layout.css" />
+    <link rel="stylesheet" href="./style/font.css" />
+    <link rel="stylesheet" href="./style/nav.css" />
+    <title>Book page 제작</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <div id="header-inner">
+          <h1>
+            <span>Stylin' with CSS:</span> A Designer's Guide,Second Edition
+          </h1>
+          <h2>A New Riders Book by Charles Wyke-smith</h2>
+        </div>
+      </header>
+      <!-- header end -->
+      <nav>
+        <div id="nav-inner">
+          <ul>
+            <li><a href="#">What's New</a></li>
+            <li><a href="#">Table of Contents</a></li>
+            <li>
+              <a href="#">CSS Link</a>
+              <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- nav end -->
+      <div id="contents">
+        <div id="contents-inner">
+          <div class="content">
+            <div class="left-nav">
+              <div class="left-nav-inner">
+                <h3>
+                  <a href="#">Register Now</a>
+                </h3>
+                <p>
+                  to download the step-by-step Stylin'code examples! As a bonus,
+                  you getStylib,a CSS library with page templates and
+                  ready-styled components such as lists, multi-level menus,
+                  forms and tables.
+                </p>
+                <form method="post" action="">
+                  <div class="form-section">
+                    <label for="u-name">User Name</label>
+                    <input
+                      type="text"
+                      id="u-name"
+                      name="u-name"
+                      size="7"
+                      maxlength="7"
+                      placeholder="User Name"
+                    />
+                  </div>
+                  <div class="form-section">
+                    <label for="u-pw">Password</label>
+                    <input
+                      type="password"
+                      id="u-pw"
+                      name="u-pw"
+                      size="7"
+                      maxlength="7"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div class="form-section">
+                    <input type="submit" value="log-in" />
+                  </div>
+                  <ul>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">비밀번호찾기</a></li>
+                  </ul>
+                  <!-- 
+                    input, button 등 입력관련 양식들은 반드시 block tag로
+                    감싸주어야 웹 유효성 통과를 할 수 있다.
+                  -->
+                </form>
+              </div>
+              <!-- left-nav-inner end -->
+            </div>
+            <!-- left-nav end -->
+            <div class="main-content">
+              <img src="./images/cws_cropped_bw_170px.jpg" alt="사람" />
+              <p>
+                In <span>Stylin' with CSS</span>, Charles Wyke-Smith takes you
+                rapidly from CSS basics to advanced page styling. Whether you
+                are taking your first steps into the world of standards-based
+                Web site design,or are a seasoned pro, Stylin' provides you with
+                essential CSS information, examples and techniques.
+              </p>
+              <strong><em> Stylin' with CSS </em> shows you how to:</strong>
+              <p>
+                Create fixed-width and liquid page layouts. Create your own
+                drop-down menus, or use the multi-level version in the
+                <span>Stylib</span> library. Write for today's browsers while
+                working around the quirks of IE6. Accelerate site development
+                with the Stylib page templates interface and components. Use CSS
+                like a pro by understanding key concepts and techniques such as
+                document flow, absolute andrelative positioning, and floating
+                and clearing.
+              </p>
+            </div>
+            <!-- main-content end -->
+          </div>
+          <!-- content end -->
+          <div class="promo">
+            <div class="promo-inner">
+              <img src="./images/book_cover.jpg" alt="책표지" />
+              <ul>
+                <li><a href="#">Buythis Book</a></li>
+                <li><a href="#">Read Reviews of this Book</a></li>
+                <li><a href="#">Other Books by this Author</a></li>
+                <li><a href="#">About the Author</a></li>
+                <li><a href="#">The Author's Conference Schedule</a></li>
+                <li><a href="#">Other Books We Recommend</a></li>
+              </ul>
+            </div>
+            <!-- promo-inner end -->
+          </div>
+          <!-- promo end -->
+        </div>
+      </div>
+      <!-- contents end -->
+      <footer>
+        <div id="footer-inner">
+          <p>
+            ⓒ 2007 - Stylin' with CSS: A Designer's Guide, Second Edition by
+            Charles Wyke-Smith
+          </p>
+        </div>
+      </footer>
+      <!-- footer end -->
+    </div>
+    <!-- wrapper end -->
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아이콕스 반응형 웹페이지 제작</title>
+    <link rel="stylesheet" href="css/master.css" />
+    <script src="js/jquery.js"></script>
+    <!--<script src="js/modernizr.custom.js"></script>-->
+    <!--<script src="js/jquery.mobile.custom.min.js"></script>-->
+    <script>
+      //정의문과 실행문을 동시에 작성할 경우 </head>에 스크립트 작성
+      /*
+    wrapper선언
+    1.jQuery('선택자').html('구문형식');
+    2.(function($){실행할 문장;})(jQuery)
+    3.$(function(){실행할문장;})=>간략형
+    */
+      $(function () {
+        //주메뉴에 마우스를 오버했을때 보이게(.hide() .show())
+        $("#lnb>ul>li>a").bind("mouseover focus", function () {
+          $("#lnb>ul>li>ul").hide(); //초기값
+          $("#lnb>ul>li>a").css({
+            height: "29px",
+            background: "none",
+          });
+
+          $(this).next().show();
+          $(this).css({
+            height: "32px",
+            background: "url(images/over_icon.gif)no-repeat 50% 100%",
+          });
+        });
+        //.bind(events,function());
+        //.on(events,selector,data,function());
+
+        //주메뉴에 마우스 아웃했을때 안보이게...
+        $("#lnb").mouseleave(function () {
+          $("#lnb>ul>li>ul").stop().slideUp(50);
+          //.slideUp( [duration ] [, easing ] [, complete ] )
+          $("#lnb>ul>li>a").css({
+            height: "29px",
+            background: "none",
+          });
+        });
+
+        //allMenu_view click했을때 slideDown
+        $(".allMenu_view>a").click(function () {
+          $(".allMenu_view").slideUp(50, function () {
+            $("#allMenu_box").slideDown("slow");
+          });
+        });
+        //all_close click했을때 slideUp
+        $(".all_close").click(function () {
+          $("#allMenu_box").slideUp(50, function () {
+            $(".allMenu_view").slideDown(50);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header id="firstHeader">
+      <h1 title="Education by sympathy">
+        <a href="#">
+          <img src="images/logo.gif" alt="아이콕스" />
+        </a>
+      </h1>
+      <form method="post" id="sform" name="sform">
+        <fieldset>
+          <legend class="skip">도서검색</legend>
+          <label class="skip" for="sbox">도서 검색어 입력</label>
+          <input
+            type="search"
+            id="sbox"
+            class="tbox"
+            placeholder="도서 검색어 입력"
+          />
+          <input type="image" src="images/search.gif" alt="검색" class="sbtn" />
+        </fieldset>
+      </form>
+      <ul class="gnb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <nav id="lnb">
+        <ul>
+          <li class="m m1">
+            <a href="#" class="mm">아이콕스</a>
+            <ul>
+              <li><a href="#">회사소개</a></li>
+              <li class="last"><a href="#">비전</a></li>
+            </ul>
+          </li>
+          <li class="m m2">
+            <a href="#" class="mm">도서소개</a>
+            <ul>
+              <li><a href="#">신간도서</a></li>
+              <li class="last"><a href="#">도서목록</a></li>
+            </ul>
+          </li>
+          <li class="m m3">
+            <a href="#" class="mm">iCox커뮤니티</a>
+            <ul>
+              <li><a href="#">와글와글IT</a></li>
+              <li><a href="#">C 스쿨</a></li>
+              <li class="last"><a href="#">Java 스쿨</a></li>
+            </ul>
+          </li>
+          <li class="m m4">
+            <a href="#" class="mm">iCox자료실</a>
+            <ul>
+              <li><a href="#">도서자료실</a></li>
+              <li><a href="#">기타자료실</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="allMenu_view"><a href="#">전체메뉴</a></div>
+      </nav>
+      <!--주메뉴 끝-->
+
+      <nav id="allMenu_box">
+        <ul>
+          <li>
+            <a href="#">아이콕스</a>
+            <ul>
+              <li><a href="#">회사소개</a></li>
+              <li><a href="#">비전</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">도서소개</a>
+            <ul>
+              <li><a href="#">신간도서</a></li>
+              <li><a href="#">도서목록</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">iCox커뮤니티</a>
+            <ul>
+              <li><a href="#">와글와글IT</a></li>
+              <li><a href="#">C 스쿨</a></li>
+              <li><a href="#">Java 스쿨</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">iCox자료실</a>
+            <ul>
+              <li><a href="#">도서자료실</a></li>
+              <li><a href="#">기타자료실</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="#" class="all_close">전체메뉴닫기</a>
+      </nav>
+    </header>
+    <!--<script>
+  body안에 작성할때는 실행문만 작성할 경우  
+</script>-->
+  </body>
+</html>
+<!--
+    제이쿼리 사용하는 순서
+    1.제이쿼리 라이브러리 연결하기
+      <script src="js/jquery.js"></script>
+      </head>위에 작성합니다.
+    2.wrapper선언하기
+      <script>
+        $(function(){
+            실행문작성;
+        });
+      </script>
+      </head>위에 작성합니다.
+    3.실행문안에 제이쿼리 기본 문법 작성
+      $('제어대상').메서드('값');
+      누구누구를 선택해서 무엇을 할것이냐?
+-->

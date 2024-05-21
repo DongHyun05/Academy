@@ -1,0 +1,61 @@
+img {
+  background: red;
+}
+
+.main_table {
+  width: 850px;
+  height: 500px;
+  border: 1px solid;
+  margin: 8% auto;
+}
+
+.section_1 {
+  margin-left: 20px;
+  float: left;
+}
+
+.section_1 img {
+  width: 180px;
+  margin: 20px;
+  float: left;
+}
+
+.section_1 p {
+  width: 800px;
+  height: 150px;
+  background-color: yellow;
+}
+
+.section_2 {
+  margin-left: 20px;
+  float: left;
+}
+
+.section_2 img {
+  width: 180px;
+  margin: 20px;
+  float: left;
+}
+
+.section_2 p {
+  width: 800px;
+  height: 150px;
+  background-color: yellow;
+}
+
+.section_3 {
+  margin-left: 20px;
+  float: left;
+}
+
+.section_3 img {
+  width: 180px;
+  margin: 20px;
+  float: left;
+}
+
+.section_3 p {
+  width: 800px;
+  height: 150px;
+  background-color: yellow;
+}

@@ -1,0 +1,29 @@
+/* Basic Style */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  width: 400px;
+  height: 300px;
+  caption-side: top;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px dotted #000;
+  padding: 10px;
+  text-align: center;
+}

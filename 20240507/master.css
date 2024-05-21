@@ -1,0 +1,144 @@
+@import url("normalize.css");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+#main-header,
+#main-nav,
+#contents,
+footer {
+  width: 960px;
+  margin: 0 auto;
+  border: 1px solid green;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* 
+  css3 width 값을 유지하면서 안쪽으로 
+  border, padding을 적용
+  (가로 너비가 늘어나지 않습니다.) 
+  */
+}
+
+#contents {
+  padding-bottom: 0;
+}
+
+#main-header {
+  height: 160px;
+  background: #eee;
+}
+
+#main-nav {
+  height: 60px;
+  background: #ddd;
+}
+
+#main-nav ul {
+  overflow: hidden;
+}
+
+#main-nav ul li {
+  float: left;
+}
+
+#main-nav ul li a {
+  display: block;
+  line-height: 20px;
+  padding: 0 20px;
+  position: relative;
+}
+
+#main-nav ul li a:after {
+  content: "";
+  width: 1px;
+  height: 10px;
+  background: #000;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+#main-nav ul li:last-child a:after {
+  width: 0;
+}
+
+aside {
+  width: 240px;
+  float: left;
+  background: #777;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+aside nav {
+  width: 100%;
+  background: #ccc;
+}
+
+aside nav ul {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+aside nav ul li a {
+  display: block;
+  line-height: 32px;
+  text-indent: 20px;
+  border-bottom: 1px solid #333;
+}
+
+article {
+  width: 650px;
+  float: right;
+  background: #888;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+article header {
+  padding: 5px;
+  margin-bottom: 20px;
+  background: #ddd;
+}
+
+article section {
+  width: 300px;
+  float: left;
+  background: #aaa;
+}
+
+article figure {
+  width: 300px;
+  float: right;
+  padding: 10px;
+  background: #aaa;
+  box-sizing: border-box;
+}
+
+article article {
+  width: 100%;
+  margin-top: 20px;
+  background: #ddd;
+}
+
+article figure figcaption {
+  padding: 10px;
+}
+
+footer {
+  background: #999;
+}

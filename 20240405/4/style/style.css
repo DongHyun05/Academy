@@ -1,0 +1,96 @@
+/* Basic Style */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.skip {
+  text-indent: -9999px;
+}
+
+th,
+td {
+  color: #666;
+}
+/* thead style */
+
+thead {
+  height: 50px;
+  line-height: 50px;
+}
+
+tr {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+thead tr th:nth-child(2),
+tbody tr td:nth-child(2) {
+  text-align: left;
+}
+
+/* tbody style */
+
+tbody {
+  height: 40px;
+  line-height: 40px;
+}
+
+tbody td:nth-child(2) a:hover {
+  color: green;
+  font-weight: bold;
+}
+
+/* page-n style */
+
+.page-n {
+  width: 100%;
+}
+
+.page-n ul {
+  width: 279px;
+  margin: 0 auto;
+}
+
+.page-n ul li {
+  text-align: center;
+  padding: 0 3px;
+  margin-top: 10px;
+  float: left;
+}
+
+.page-n ul li a {
+  width: 1px;
+  padding: 0 5px;
+  font-weight: bold;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.page-n ul li a:hover {
+  background: #bbb;
+  color: #333;
+}
+
+.page-n ul li a:focus {
+  background: blue;
+  color: #fff;
+}

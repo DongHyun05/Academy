@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+header {
+  background: url(../img/bg_bar.gif);
+}
+
+.nav-menu {
+  width: 710px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nav-menu li {
+  float: left;
+}
+
+.nav-menu li a {
+  background: url(../img/line.gif) no-repeat;
+  padding: 0 15px;
+  display: block;
+}
+
+.nav-menu li:first-child a {
+  background: none;
+}
+
+.nav-menu li a:hover {
+  color: white;
+}

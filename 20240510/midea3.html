@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어 쿼리 알아보기</title>
+    <style>
+      /* 세로 방향 */
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        html {
+          background: gray;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+      /* 가로 방향 */
+      @media screen and (max-width: 767px) and (orientation: landscape) {
+        html {
+          background: skyblue;
+          color: #fff;
+          font-weight: normal;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Lorem ipsum</h2>
+    <time>2024-05-08</time>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in
+      magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend
+      cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien
+      ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa
+      pulvinar turpis.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어 쿼리 알아보기</title>
+    <style>
+      /* 모바일 767px 이하 배경색 : red */
+      @media screen and (max-width: 767px) {
+        html {
+          background: red;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+      /* 태블릿 768px ~ 959px 배경색 : green */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        html {
+          background: green;
+          color: #fff;
+          font-weight: normal;
+        }
+      }
+      /* 데스크탑 960px 이상 배경색 : orange */
+      @media screen and (min-width: 960px) {
+        html {
+          background: orange;
+          color: #fff;
+          font-weight: bold;
+          font-style: italic;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Lorem ipsum</h2>
+    <time>2024-05-08</time>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in
+      magna libero. Sed nec pharetra nunc. Proin eget magna id ipsum eleifend
+      cursus sit amet nec lectus. Nunc quis lacus magna. Aliquam blandit, sapien
+      ut viverra fermentum, elit tortor ornare nisi, in luctus sem massa
+      pulvinar turpis.
+    </p>
+  </body>
+</html>

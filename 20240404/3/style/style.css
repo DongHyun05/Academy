@@ -1,0 +1,99 @@
+/* basic style */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* layout style */
+
+header {
+  background: #27272e;
+}
+
+/* lnb style */
+
+.lnb {
+  width: 916px;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 auto;
+}
+
+.lnb > li {
+  float: left;
+  position: relative;
+}
+
+.lnb > li > a {
+  display: block;
+  color: white;
+  padding: 0 25px;
+  position: relative;
+}
+
+.lnb > li > a:hover {
+  color: greenyellow;
+}
+
+.lnb > li > a::before {
+  content: "";
+  width: 0px;
+  height: 5px;
+  background: skyblue;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease-in;
+}
+
+.lnb li:hover a::before {
+  width: 100%;
+}
+
+.lnb li:hover a {
+  color: greenyellow;
+}
+
+/* sub-nav style */
+
+.sub-nav {
+  font-size: 13px;
+  position: absolute;
+  left: 0px;
+  top: 45px;
+  width: 370px;
+  border: 1px solid #aaa;
+  background: #fff;
+  padding: 15px 20px 30px 30px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 4px 44px 6px #f2f2f2;
+  display: none;
+}
+
+.sub-nav > li {
+  line-height: 30px;
+}
+
+.sub-nav > li > a {
+  color: #333 !important;
+}
+
+.lnb li:hover .sub-nav {
+  display: block;
+}
+
+.sub-nav li a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}

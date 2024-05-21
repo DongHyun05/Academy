@@ -1,0 +1,235 @@
+/*---------- Basic Style ----------*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* --------- header style --------- */
+
+header {
+  overflow: hidden;
+}
+
+/* ---------- top header ---------- */
+
+.top {
+  height: 32px;
+  background: #444;
+}
+
+.top-menu {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.top ul {
+  margin-left: 75px;
+  overflow: hidden;
+}
+
+.top ul li {
+  text-align: center;
+  margin: 0 5px;
+  float: left;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.top a {
+  color: #aaa;
+  line-height: 32px;
+}
+
+.top li:first-child a {
+  color: #fff;
+  background: url(../img/icon-location.png) no-repeat left center;
+  padding-left: 15px;
+}
+
+/* ---------- mid header ---------- */
+
+.middle-header {
+  background: #27272e;
+}
+
+.middle-header-inner {
+  width: 1040px;
+  height: 90px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-img img {
+  margin: 15px 0;
+}
+
+.left-img,
+.gnb-right {
+  position: absolute;
+}
+
+.left-img {
+  top: 0;
+  left: 0;
+}
+
+.gnb-right {
+  right: 0;
+  top: 25px;
+}
+
+.middle-header h1 {
+  text-align: center;
+  line-height: 90px;
+}
+
+.gnb-right .gnb,
+.location-list {
+  float: right;
+}
+
+.gnb-right .gnb {
+  clear: both;
+}
+
+.gnb-right ul li {
+  float: left;
+}
+
+.gnb-right a {
+  padding: 0 15px;
+}
+
+.location-list a {
+  font-weight: 400;
+}
+
+.location-list a::after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #aaa;
+  position: absolute;
+  left: 0;
+  top: 2.5px;
+}
+
+.location-list li:last-child a,
+.gnb li:last-child a {
+  padding-right: 0px;
+}
+.location-list li:first-child a:after {
+  width: 0;
+}
+
+.location-list .bg-circle {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 15px;
+  text-align: center;
+  background: green;
+  color: #000;
+  font-weight: bold;
+  border: 1px solid #111;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+.gnb > li:nth-child(3) > a {
+  background: url(../img/icon-sign.png) no-repeat 0 50%;
+}
+
+.gnb > li:nth-child(4) > a {
+  background: url(../img/icon-login.png) no-repeat 0 50%;
+}
+
+.gnb > li:first-child > a {
+  padding-right: 5px;
+}
+
+.gnb-right a {
+  position: relative;
+  font-size: 13px;
+  color: #fff;
+}
+
+.gnb a {
+  font-weight: 800;
+}
+
+/* ---------- lnb header ---------- */
+
+.lnb a {
+  height: 45px;
+  line-height: 45px;
+  font-size: 15px;
+  padding: 0 23px;
+  color: white;
+  display: block;
+  position: relative;
+}
+
+.lnb ul li {
+  float: left;
+}
+
+.lnb ul {
+  margin: 0 auto;
+  margin-left: 21.5%;
+  width: 1100px;
+  overflow: hidden;
+}
+
+.lnb ul li a::before {
+  content: "";
+  width: 0px;
+  height: 5px;
+  background: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease-in;
+}
+
+.lnb ul li a:hover::before {
+  width: 100%;
+}
+
+.lnb ul li a:hover {
+  color: greenyellow;
+}
+
+.lnb {
+  border-top: 1px solid #525251;
+  border-bottom: 1px solid #525251;
+  background: #27272e;
+}
+
+.lnb .icon-list {
+  float: left;
+  margin: 7px;
+}
+
+.icon-list img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ------------------------------ */

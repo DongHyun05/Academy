@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html5 문서 구조를 위한 주요 시멘틱 태그 알아보기</title>
+    <!-- [if lt IE 9]>
+      <script src="./html5shiv-master/src/html5shiv-master.js"></script>
+    <![endif] -->
+    <link rel="stylesheet" href="./master.css" />
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>머릿말입니다.</h1>
+    </header>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#">HTML5</a></li>
+        <li><a href="#">CSS3</a></li>
+        <li><a href="#">JAVASCRIPT</a></li>
+        <li><a href="#">jQuery</a></li>
+      </ul>
+    </nav>
+    <!-- 주메뉴인 네비게이션에 주로 nav로 묶어줍니다. -->
+    <section id="contents">
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">서비스메뉴</a></li>
+            <li><a href="#">찾아오시는길</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- 
+        aside는 contents 주내용과 별개인 내용을 작성할때
+        필수요소가 아니므로 광고나 링크 모음을 문서의 내용으로 넣을때 
+      -->
+      <article>
+        <header>
+          <hgroup>
+            <h2>본문의 머리말에 해당</h2>
+            <h3>본문에 대한 제목</h3>
+          </hgroup>
+          <time>2024-05-07</time>
+        </header>
+        <section>
+          웹페이지의 섹션에 사용하는 태그입니다. 웹페이지를 의미적으로 각각의
+          파트로 구분하기 위해 쓰는 태그입니다.
+        </section>
+        <figure>
+          <img src="./Lighthouse.jpg" alt="등대" width="280" height="200" />
+          <figcaption>Lighthouse</figcaption>
+        </figure>
+        <!-- 그림, 도표, 다이어그램 등의 글에 이해를 돕기 위한 내용을 나타내는 태그입니다. -->
+        <article>
+          웹페이지의 내용에 사용하는 태그입니다. 문서나 페이지, 사이트에서
+          독립적으로 배포 혹은 재사용을 할 수 있는 섹션에 사용합니다.
+        </article>
+      </article>
+      <!-- 
+        본문에서 주제에 맞는 내용을 기사 내용처럼 묶어서 작성, 단독으로 분리해서 재사용이 가능 
+      -->
+    </section>
+    <!-- 본문에는 section, article, aside tag가 있습니다. -->
+    <footer>
+      <p>꼬릿말입니다.</p>
+    </footer>
+  </body>
+</html>

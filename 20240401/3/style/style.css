@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  width: 700px;
+  background: pink;
+  margin-bottom: 20px;
+}
+
+.spacial {
+  padding: 10px;
+  color: #f00;
+  border: 2px solid #0df;
+  background-color: yellow;
+  position: static;
+  right: 10px;
+  bottom: 50px;
+}

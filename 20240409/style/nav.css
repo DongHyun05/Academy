@@ -1,0 +1,55 @@
+nav > #nav-inner > ul {
+  height: 40px;
+}
+
+nav > #nav-inner > ul > li {
+  float: left;
+  position: relative;
+}
+
+nav > #nav-inner > ul > li > a {
+  padding: 0 10px;
+  line-height: 40px;
+  display: block;
+}
+
+nav > #nav-inner > ul > li > a::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: green;
+  position: absolute;
+  left: 0;
+  top: 15px;
+}
+
+nav > #nav-inner > ul > li:last-child > a::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: green;
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+nav > #nav-inner > ul > li > ul {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 150px;
+  background: rgba(255, 255, 255, 0.8);
+  /* background: #fff;
+  opacity: 0.5; */
+  border: 1px solid #d6d5d0;
+}
+
+nav > #nav-inner > ul > li > ul > li > a {
+  display: block;
+  line-height: 30px;
+  border-bottom: 1px solid #d6d5d0;
+  text-indent: 50px;
+  color: #446643;
+}

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 10px;
+  background-color: #222 !important;
+  margin: 0 0 20px !important;
+}
+
+p {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+.first {
+  color: blue;
+}
+
+.accent {
+  border: 1px solid #000;
+  color: #fff;
+  background-color: orange;
+  padding: 5px;
+  margin: 0 15px;
+}
+
+#container {
+  width: 1025px;
+  margin: 50px auto;
+  padding-bottom: 15px;
+  background-color: rgb(255, 221, 227);
+  border: 1px solid #000;
+}

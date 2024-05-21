@@ -1,0 +1,81 @@
+#wrapper {
+  background: url(../images/cover_circles.jpg) no-repeat 300px 0;
+  min-width: 732px;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+header {
+  color: #fff;
+  background: url(../images/gray_header.gif) repeat-y;
+}
+
+nav {
+  height: 40px;
+  margin: 20px 0;
+  background: skyblue;
+}
+
+#contents {
+  width: 100%;
+  float: left;
+  display: inline;
+  background: url(../images/full_arc.gif) no-repeat 0 0;
+}
+
+.content {
+  width: 100%;
+  margin-right: -180px;
+  float: left;
+}
+
+.left-nav {
+  width: 180px;
+  float: left;
+}
+
+.main-content {
+  width: auto;
+  margin: 0 180px;
+}
+
+.promo {
+  width: 180px;
+  float: right;
+}
+
+footer {
+  color: #fff;
+  clear: both;
+  background: url(../images/footer_graphic_cropped.gif) repeat-y 0 0;
+  text-align: center;
+}
+
+/* 
+  inner style : 
+  레이아웃에 해당되는 요소에 패딩을 주면 가로 너비가 늘어나지만
+  레이아웃 요소 안에 엘리먼트를 생성하고 패딩을 주면 너비가 늘어나지 않는다.
+*/
+
+#header-inner,
+#contents-inner {
+  overflow: hidden;
+}
+
+#contents-inner {
+  padding: 0 0 1em 0.3em;
+}
+
+.left-nav-inner {
+  padding: 0 0.3em;
+}
+
+.promo-inner {
+  padding: 0 0.5em 1em 1em;
+}
+
+#footer-inner {
+  padding: 1em 0.5em;
+}
