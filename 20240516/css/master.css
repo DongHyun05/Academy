@@ -971,6 +971,9 @@ img {
 
 /* 모바일 767 이하 */
 @media screen and (max-width: 767px) {
+  body {
+    background: url(../images/body_bg.gif) repeat-x 0 0;
+  }
   /*header style*/
   #firstHeader {
     width: 95%;
@@ -1061,27 +1064,22 @@ img {
     font-size: 12px;
   }
   .allMenu_view {
-    float: left;
-    width: 20% !important;
+    width: 100% !important;
     text-align: center;
   }
   .allMenu_view > a {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 50%;
     line-height: 39px;
     color: #fff;
-    background: #3da7db url(../images/btn_allmenu.gif) no-repeat 50% 0;
+    background: url(../images/btn_allmenu.png) no-repeat 50% 0;
   }
   #allMenu_box {
     width: 85%;
-    padding: 15px 0 0 0;
-    border: 4px solid #369;
-    background: #fff;
-    position: absolute;
-    left: 7%;
-    top: 105px;
+    padding: 10px 0 0 0;
+    border: 2px solid #369;
     display: none;
-    z-index: 1000;
+    margin: 0 auto;
   }
   #allMenu_box > ul {
     width: 95%;
@@ -1171,7 +1169,8 @@ img {
   }
   .bookcon > h2 {
     text-align: right;
-    padding: 2% 0 0 0;
+    padding: 4% 0 0 9%;
+    width: 90%;
   }
   .bookcon > h2 > img {
     width: 60%;
@@ -1187,15 +1186,15 @@ img {
   .bookcon > ul > li.pic {
     position: relative;
     float: left;
-    top: -45px;
+    top: -30px;
     width: 27.2%;
     padding-left: 6.48%;
-    margin-bottom: -45px;
+    margin-bottom: -30px;
   }
   .bookcon > ul > li.smr {
     float: right;
     width: 48.75%;
-    padding: 5% 11% 0 0;
+    padding: 3% 6% 0 0;
   }
   .bookcon > ul > li.detail {
     float: right;
@@ -1207,10 +1206,11 @@ img {
   }
   #arrow > a {
     position: absolute;
-    top: 30%;
+    top: 25%;
+    width: 5%;
   }
   #arrow > a img {
-    width: 80%;
+    width: 60%;
   }
   .prev {
     left: 0;
@@ -1227,6 +1227,9 @@ img {
     float: left;
     margin-right: 3px;
   }
+  #book_roll > ul > li > img {
+    width: 8px;
+  }
 
   /*content style*/
   #content {
@@ -1242,64 +1245,12 @@ img {
   }
   /*login-banner style*/
   #login-banner {
-    width: 20%;
-    float: left;
-    padding: 0 0 20px 10px;
-    box-sizing: border-box;
-  }
-  /* 
-    #login-area > h2 {
-    height: 33px;
-    } 
-  */
-  #login-area > form {
-    position: relative;
-    width: 100%;
-  }
-  #login-area > form > fieldset {
-    padding: 8px 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  #login-area > form .tbox {
-    width: 64%;
-    height: 22px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  #login-area > form .formsection {
-    padding: 2px 0 3px;
-  }
-  #login-area > form .loginbtn {
-    position: absolute;
-    right: 5px;
-    top: 11px;
-  }
-  #login-area > form ul {
-    padding: 10px 0 5px;
-    overflow: hidden;
-  }
-  #login-area > form ul li a {
-    font: 12px "NGothic", "Gulim";
-    color: #999;
-    padding-left: 5px;
-    background: url(../images/bul_login.gif) no-repeat 0 50%;
-  }
-  #login-area > form ul li a:hover {
-    color: #333;
-  }
-  #banner-area {
-    padding-top: 10px;
-  }
-  #banner-area li {
-    padding-top: 5px;
-    text-align: center;
+    display: none;
   }
 
   /*newBooks-news style*/
   #newBooks-news {
-    width: 73%;
-    float: right;
+    border-top: 1px solid #fff;
     position: relative;
   }
   #newBooks-news .tit {
@@ -1307,10 +1258,10 @@ img {
     top: 0;
   }
   #newBooks-news .t1 {
-    left: 10px;
+    left: 5px;
   }
   #newBooks-news .t2 {
-    left: 130px;
+    left: 125px;
   }
   .item1 {
     margin-top: 37px;
@@ -1318,7 +1269,6 @@ img {
   }
   a.rss {
     display: inline-block;
-    margin-top: 30px;
   }
   .booklist {
     font: 13px "NGothic", "Gulim";
@@ -1332,46 +1282,44 @@ img {
   }
   .booklist h3 {
     position: absolute;
-    left: 10px;
-    width: 111px;
+    left: 5px;
+    width: 85px;
     padding: 0;
   }
-  .booklist h3 img {
-    max-width: 83px;
-    width: 100%;
-  }
+  /* 
+    .booklist h3 img {
+      max-width: 83px;
+      width: 100%;
+     } 
+  */
   .booklist p.subtit {
-    width: 77%;
-    margin-left: 111px;
-    padding-right: 10px;
-    font: 13px "NGothic", "Gulim";
+    margin-left: 95px;
+    padding-right: 0px;
+    font: 12px "NGothic", "Gulim";
     color: #333;
   }
   .booklist p.smr {
-    width: 77%;
-    margin-left: 111px;
+    margin-left: 95px;
     padding: 10px 10px 10px 0;
-    line-height: 150%;
-    font: 13px "NGothic", "Gulim";
+    line-height: 120%;
+    text-align: justify;
     color: #999;
   }
   .booklist footer {
-    margin-left: 111px;
-    width: 77%;
-    padding-right: 10px;
+    margin-left: 95px;
+    padding-right: 0px;
   }
   .booklist strong {
     font-weight: bold !important;
   }
   .booklist footer strong {
-    font: 13px "NGothic", "Gulim";
     color: #f60;
   }
   .item2 {
     display: none;
   }
   #new_list {
-    margin-top: 37px;
+    margin-top: 20px;
     border-top: 1px solid #aaa;
     padding-top: 25px;
   }
@@ -1381,7 +1329,7 @@ img {
   #new_list ul li {
     position: relative;
     width: 100%;
-    padding: 8px 0;
+    padding: 7px 0;
     border-bottom: 1px solid #ccc;
     font: 13px "NGothic", "Gulim";
   }
@@ -1406,16 +1354,7 @@ img {
     position: relative;
   }
   #down-author > p {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20%;
-    max-width: 185px;
-    padding: 20px 0 0 10px;
-  }
-  #author_column {
-    margin-left: 28%;
-    width: 71%;
+    display: none;
   }
   #author_column h2 {
     padding: 20px 0 10px;
@@ -1425,23 +1364,25 @@ img {
     display: block;
     clear: both;
   }
-  #author_column ul li {
-    float: left;
+  #author_column ul li:first-child {
+    text-align: center;
+  }
+  #author_column ul li video {
+    width: 90%;
+    height: 250px;
   }
   #author_column ul li a {
     font: 12px "NGothic", "Gulim";
     color: #999;
   }
   .nscreen {
-    width: 40%;
-    line-height: 160%;
-    padding: 20px 0 0 15px;
+    line-height: 150%;
   }
   .nscreen span {
+    padding: 5px 0;
     display: block;
     color: #333;
     font-family: "NGothicEB";
-    margin-bottom: 10px;
   }
 
   /* footer style */
@@ -1460,10 +1401,10 @@ img {
     color: #999;
   }
   .foot > div > p {
-    font: 12px "NGothic", "Gulim";
+    font: 11px "NGothic", "Gulim";
   }
   .foot > div > .copy {
-    padding-top: 20px;
+    padding-top: 10px;
     display: block;
   }
   .foot > ul {
@@ -1472,5 +1413,8 @@ img {
   .foot > ul > li {
     float: left;
     padding: 0 5px;
+  }
+  .foot > ul > li > img {
+    width: 65%;
   }
 }
