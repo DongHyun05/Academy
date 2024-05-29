@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>line그리기</title>
+    <style>
+      canvas {
+        border: 1px solid #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvasBox" width="500" height="300"></canvas>
+    <script>
+      /*
+    변수선언 var let const
+    변수명은 의미전달이 되는 단어를 사용
+    변수명 뒤에는 값을  할당해야 합니다
+    변수 형식: var 변수명=값;
+               var 변수명;
+                   변수명=값;
+    */
+      var dcanvas = document.getElementById("canvasBox");
+      var ctx = dcanvas.getContext("2d");
+      //사선긋기
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(500, 300);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#0033ff";
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(0, 300);
+      ctx.lineTo(500, 0);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#0033ff";
+      ctx.stroke();
+
+      //수직선 긋기
+      ctx.beginPath(); //경로를 시작
+      ctx.moveTo(250, 0); //시작좌표를 입력
+      ctx.lineTo(250, 300); //끝좌표를 입력
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#0033ff";
+      ctx.stroke();
+
+      //수평선 긋기
+      ctx.beginPath(); //경로를 시작
+      ctx.moveTo(0, 150); //시작좌표를 입력
+      ctx.lineTo(500, 150); //끝좌표를 입력
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#0033ff";
+      ctx.stroke();
+    </script>
+  </body>
+</html>
+<!--
+    <canvas>요소는 스크립팅을 통해 즉석에서 그래픽을 그리는데 사용합니다.
+    <canvas>요소는 그래픽의 컨테이너 일뿐입니다.실제로 그래픽을 그리려면 스크립트를 사용해야 합니다.
+    canvas에는 line, rect, circle,text,img 추가를 위한 여러가지 방법이 있습니다.canvas는 2d,3d가능합니다.canvas는 자바스크립트를 사용하기 때문에 비트맵 이미지로 인식을 합니다.
+    svg는 xml를 사용하므로 백터 이미지에 해당이 됩니다.
+-->

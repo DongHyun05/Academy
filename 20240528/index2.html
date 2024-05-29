@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shape 그리기</title>
+    <style>
+      canvas {
+        border: 1px solid #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvasBox" width="500" height="300"></canvas>
+    <script>
+      var dcanvas = document.getElementById("canvasBox");
+      var ctx = dcanvas.getContext("2d");
+      var centerX = dcanvas.width / 1.5;
+      var centerY = dcanvas.height / 2;
+      var radius = 100;
+
+      ctx.beginPath();
+      ctx.rect(10, 20, 200, 210);
+      ctx.fillStyle = "#fcf15f";
+      ctx.fill();
+      ctx.linewidth = 1;
+      ctx.strokeStyle = "#0033ff";
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, 0.1, Math.PI, false);
+      ctx.fillStyle = "#ac5f9a";
+      ctx.fill();
+      ctx.linewidth = 1;
+      ctx.strokeStyle = "#a2f9f2";
+      ctx.stroke();
+    </script>
+  </body>
+</html>

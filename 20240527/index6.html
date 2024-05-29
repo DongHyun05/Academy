@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #wrapper1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-bottom: 100px;
+        grid-gap: 20px 30px;
+      }
+      #wrapper2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      .items:nth-child(odd) {
+        background: #ccc;
+      }
+      .items:nth-child(even) {
+        background: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper1">
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+    <div id="wrapper2">
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="items">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+  </body>
+</html>
